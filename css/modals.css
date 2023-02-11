@@ -1,0 +1,249 @@
+.abrir{
+     display: inline-block;
+     position: relative;
+     transform: translate(-50%,-50%);
+}
+
+.abrir:hover{
+    background: rgb(0, 0, 0);
+    color: rgb(119, 0, 255);
+    cursor: pointer;
+}
+
+.abririnfo{
+    padding: 2px;
+    
+     display: inline-block;
+     color: white;
+     position: absolute;
+     left: 80%;
+    
+}
+.abririnfored{
+    padding: 2px;
+    
+     display: inline-block;
+     color: white;
+     position: absolute;
+     left: 80%;
+    
+}
+
+.abrirsem{
+    padding: 2px;
+    
+     display: inline-block;
+     color: white;
+     position: absolute;
+     left: 80%;
+    
+}
+.abrirsemred{
+    padding: 2px;
+    
+     display: inline-block;
+     color: white;
+     position: absolute;
+     left: 80%;
+    
+}
+.informacao{
+
+    position: absolute;
+    top: 600px;
+    left: 50%;
+    padding: auto;
+}
+.informacaored{
+
+    position: absolute;
+    top: 600px;
+    left: 50%;
+    padding: auto;
+}
+.centro{
+    text-align: center; 
+    vertical-align: middle;
+}
+.info{
+    position: relative;
+    left: 80%;
+    top: 100;
+    padding: 2px;
+    background: rgb(94, 255, 0);
+     display: inline-block;
+     color: rgb(255, 0, 0);
+     opacity: 1;
+     border: 5px solid rgba(255, 0, 0, 0.459);
+     cursor: pointer;
+     animation: animati;
+     animation-duration: 800ms;
+     overflow: scroll;
+}
+.infored{
+    position: relative;
+    left: 80%;
+    top: 100;
+    padding: 2px;
+    background: rgb(94, 255, 0);
+     display: inline-block;
+     color: rgb(255, 0, 0);
+     opacity: 1;
+     border: 5px solid rgba(255, 0, 0, 0.459);
+     cursor: pointer;
+     animation: animati;
+     animation-duration: 800ms;
+     overflow: scroll;
+}
+@keyframes animati{
+    from { opacity: 1;
+    padding: 4px;
+    }
+    from { opacity: 0;
+        padding: 2px;}
+        from { opacity: 1;
+            padding: 4px;
+            }
+            from { opacity: 0;
+                padding: 2px;}
+}
+
+
+.abririnfo:hover{
+    background: rgb(82, 81, 81);
+    color: rgb(119, 0, 255);
+    cursor: pointer;
+}
+.abririnfored:hover{
+    background: rgb(82, 81, 81);
+    color: rgb(119, 0, 255);
+    cursor: pointer;
+}
+
+.modal{
+    width: 850px;
+    height: 900px;
+    background: rgba( 255, 255, 255, 0.35 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 1px );
+    -webkit-backdrop-filter: blur( 1px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+   
+    position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%,-50%);
+     display: none;
+     animation: animate;
+     animation-duration: 300ms;
+     overflow: scroll;
+    
+}
+
+@keyframes animate{
+    from { opacity: 1;}
+    from { opacity: 0;}
+}
+.modalsem{
+    width: 1200px;
+    height: 900px;
+    background: rgba( 255, 255, 255, 0.35 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 1px );
+    -webkit-backdrop-filter: blur( 1px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+   
+    position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%,-50%);
+     display: none;
+     animation: animate;
+     animation-duration: 300ms;
+     overflow: scroll;
+}
+.modalsemred{
+    width: 850px;
+    height: 900px;
+    background: rgba( 255, 255, 255, 0.35 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 1px );
+    -webkit-backdrop-filter: blur( 1px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+   
+    position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%,-50%);
+     display: none;
+     animation: animate;
+     animation-duration: 300ms;
+     overflow: scroll;
+}
+.modalinfo{
+    width: 850px;
+    height: 900px;
+    background: rgba( 255, 255, 255, 0.35 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 1px );
+    -webkit-backdrop-filter: blur( 1px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+   
+    position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%,-50%);
+     display: none;
+     animation: animate;
+     animation-duration: 300ms;
+     overflow: scroll;
+}
+.modalinfored{
+    width: 850px;
+    height: 900px;
+    background: rgba( 255, 255, 255, 0.35 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 1px );
+    -webkit-backdrop-filter: blur( 1px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+   
+    position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%,-50%);
+     display: none;
+     animation: animate;
+     animation-duration: 300ms;
+     overflow: scroll;
+}
+
+@keyframes animateinfo{
+    from { opacity: 1;}
+    from { opacity: 0;}
+}
+
+.fechar{
+    width: 30px;
+    height: 30px;
+    background-color: rgb(255, 0, 0);
+    color: aqua;
+    text-align: center;
+    border-radius: 50%;
+    float: right;
+    cursor: pointer;
+}
+.fecharred{
+    width: 30px;
+    height: 30px;
+    background-color: rgb(255, 0, 0);
+    color: aqua;
+    text-align: center;
+    border-radius: 50%;
+    float: right;
+    cursor: pointer;
+}
