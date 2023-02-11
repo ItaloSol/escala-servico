@@ -1,6 +1,8 @@
 # escala de serviço
 Sistema de automação para escala de serivo do exercito.
+
 **Caso tenha interesse em aplicar o sistema na sua OM**
+
 Se você está procurando por uma solução de gerenciamento de escalas para sua organização militar, entre em contato conosco. 
 Nós oferecemos uma base de dados robusta e testada, além de um sistema totalmente automatizado que atende às necessidades de cada organização militar (OM).
 
