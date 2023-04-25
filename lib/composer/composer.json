@@ -1,0 +1,17 @@
+{
+    "name": "wef/calendar",
+    "description": "calendario da escala",
+    "authors": [
+        {
+            "name": "dantas",
+            "email": "italo.sol100@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Classes\\": "../../class",
+            "Models\\": "../../model"
+        }
+    }
+}
