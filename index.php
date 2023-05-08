@@ -53,7 +53,7 @@
                     unset($_SESSION['msg']);}
                     ?>
                <div class="login-form">
-                <label for="usuario">Usuário</label>
+                <label for="usuario">Identidade Militar</label>
                 <input type="number" name="email" placeholder="Digite sua identidade militar">
                </div>
                <div class="login-form">
