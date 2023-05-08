@@ -47,6 +47,11 @@
         <form method="POST" action="acoes/login.php" id="formAuthentication">
             <div id="login">   
                 <h1 class="title-login">Login</h1>
+                <?php 
+                if(isset($_SESSION['msg'])){
+                    echo $_SESSION['msg'];
+                    unset($_SESSION['msg']);}
+                    ?>
                <div class="login-form">
                 <label for="usuario">Usuário</label>
                 <input type="number" name="email" placeholder="Digite sua identidade militar">

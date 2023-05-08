@@ -1,10 +1,5 @@
-<?php
-    session_start();
-
-    if($_SESSION["usuario"]['5'] == '1'){
-        echo "<script>window.location = 'resumo/painel.php'</script>";
-}
-
+<?php 
+session_start();
 ?>
 <link rel="stylesheet" href="http://servico.badmqgex.eb.mil.br/vendor/components/font-awesome/css/fontawesome-all.min.css">
 
