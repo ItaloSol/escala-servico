@@ -11,7 +11,6 @@ if(isset($_POST['id_usuario'])){
     $id_usuario = $_POST['id_usuario'];
     $fk_militar = $_POST['fk_militar'];
 
-
 function validaCPF($cpf = null) {
 
 // Verifica se um número foi informado
@@ -59,18 +58,12 @@ else if ($cpf == '00000000000' ||
 }
 }
  if(validaCPF($cpf) == 1){
-    $result_usuario1 = "UPDATE usuarios SET cpf='$cpf'
-  WHERE id_senha = '$id_usuario' ";
- $resultado_usuario1 = mysqli_query($conn, $result_usuario1);
- $result_usuario2 = "UPDATE usuarios SET valida='1'
-  WHERE id_senha = '$id_usuario' ";
-	$resultado_usuario2 = mysqli_query($conn, $result_usuario2);
    
-    $result_usuario2 = "UPDATE militares SET cpf='$cpf'
-    WHERE id = '$fk_militar' ";
-      $resultado_usuario2 = mysqli_query($conn, $result_usuario2);
+  $query_postos = $conexao->prepare("UPDATE usuarios SET valida='1', cpf='$cpf'
+  WHERE id_senha = '$id_usuario'");
+  $query_postos->execute(); //EXECUTA TABELA
 
-    $_SESSION['msg'] = "<h2 style='color:red;'>CPF Cadastrado com sucesso!</h2>";
+    $_SESSION['msg'] = "<h2 style='color:yellow;'>CPF Cadastrado com sucesso!</h2>";
     header("Location: ../index.php");
  }else{
     $_SESSION['msg'] = "<h2 style='color:red;'>CPF INVALIDO! Insira um CPF válido!</h2>";
