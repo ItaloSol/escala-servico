@@ -181,11 +181,11 @@ if (isset($_POST['escala'])) {
             // echo '<br>'.$Postos_Servico[$busca].'<br>';
             if ($Postos_Servico[$busca] == 'PRETA') {
                 $Folga_Obrigatoria = date('Y-m-d', strtotime('-' .  $Qtd_Prevista[$n] . 'day', strtotime($Data_Selecionada)));
-                echo "SELECT * FROM militares m INNER JOIN graduacoes g ON m.graduacao = g.id_graduacao
-                WHERE m.data_ultimo_sv_red < '$Folga_Obrigatoria' AND m.data_ultimo_sv < '$Folga_Obrigatoria' AND m.externo < '$Folga_Externa' AND m.externo_red < '$Folga_Externa' AND m.id NOT IN $Impedido_Lista 
-                AND m.escalado_externo < '$Folga_Escalado_Externo' AND m.escalado_externo_red < '$Folga_Escalado_Externo' AND id NOT IN $Impedido_Troca_Lista AND id NOT IN  $Previstos_Escalados AND id NOT IN $Impedido_Dia 
-                AND m.missao_red < '$Folga_Missao' AND m.missao < '$Folga_Missao' AND id NOT IN $Impedido_Externa AND m.servico != '$Diferente_De[$busca]'  
-                AND m.servico != 'LICENCIADO' $Busca_Curso_Graduacao[$busca] $Pagina_Atual_Array[$busca]<br>";
+                // echo "SELECT * FROM militares m INNER JOIN graduacoes g ON m.graduacao = g.id_graduacao
+                // WHERE m.data_ultimo_sv_red < '$Folga_Obrigatoria' AND m.data_ultimo_sv < '$Folga_Obrigatoria' AND m.externo < '$Folga_Externa' AND m.externo_red < '$Folga_Externa' AND m.id NOT IN $Impedido_Lista 
+                // AND m.escalado_externo < '$Folga_Escalado_Externo' AND m.escalado_externo_red < '$Folga_Escalado_Externo' AND id NOT IN $Impedido_Troca_Lista AND id NOT IN  $Previstos_Escalados AND id NOT IN $Impedido_Dia 
+                // AND m.missao_red < '$Folga_Missao' AND m.missao < '$Folga_Missao' AND id NOT IN $Impedido_Externa AND m.servico != '$Diferente_De[$busca]'  
+                // AND m.servico != 'LICENCIADO' $Busca_Curso_Graduacao[$busca] $Pagina_Atual_Array[$busca]<br>";
                 $query_registro = $conexao->prepare("SELECT * FROM militares m INNER JOIN graduacoes g ON m.graduacao = g.id_graduacao
                      WHERE m.data_ultimo_sv_red < '$Folga_Obrigatoria' AND m.data_ultimo_sv < '$Folga_Obrigatoria' AND m.externo < '$Folga_Externa' AND m.externo_red < '$Folga_Externa' AND m.id NOT IN $Impedido_Lista 
                      AND m.escalado_externo < '$Folga_Escalado_Externo' AND m.escalado_externo_red < '$Folga_Escalado_Externo' AND id NOT IN $Impedido_Troca_Lista AND id NOT IN  $Previstos_Escalados AND id NOT IN $Impedido_Dia 
