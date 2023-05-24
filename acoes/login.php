@@ -41,5 +41,5 @@
     }else{
         session_start();
         $_SESSION['msg'] = "<h2 style='color:red;'>Erro é necessário prencher todos os campos</h2>";
-     //  header("Location: ../index.php"); 
+       header("Location: ../index.php"); 
     }
