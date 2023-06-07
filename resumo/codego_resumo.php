@@ -459,6 +459,7 @@ $dia_semanaPt = utf8_encode(strftime('%a', strtotime($dataprevista)));
                                     }
                                 }
                                 $query_registro_Escala->execute(); //EXECUTA TABELA
+                                if ($query_registro_Escala->rowCount() > 0) {
                                 while ($reg = $query_registro_Escala->fetch(PDO::FETCH_ASSOC)) {
                                     $id_m = $reg['id'];
                                     $antiguidade = $reg['antiguidade'];
@@ -482,6 +483,13 @@ $dia_semanaPt = utf8_encode(strftime('%a', strtotime($dataprevista)));
                                     $Previsto_Para_Data_ultimo_Sv_Red[$h] = $data_ultimo_sv_red;
                                     //  echo $Folga_Obrigatoria .'<br>'. $Postos_Servico[$busca]. ' <br>'; echo $nome_de_guerra . '<br>';
                                     $Escalados_Previstos[$h] = $Previsto_Para_Id[$h];
+                                    $h++;
+                                 }
+                                }else{
+                                    $Previsto_Para_Id[$h] = '377';
+                                    $Previsto_Nome_Graduacao[$h] = 'NENHUM MILITAR ';
+                                    $Previsto_Para_Nome[$h] = 'DISPONIVEL';
+                                    $Previsto_Para_Graduacao[$h] = '1';
                                     $h++;
                                 }
                                 $busca++;

@@ -211,6 +211,7 @@ if (isset($_POST['escala'])) {
                 }
             }
             $query_registro->execute(); //EXECUTA TABELA
+            if ($query_registro->rowCount() > 0) {
             while ($reg = $query_registro->fetch(PDO::FETCH_ASSOC)) {
                 // echo '<br>EXISTE<br>';
                 $id = $reg['id'];
@@ -235,9 +236,16 @@ if (isset($_POST['escala'])) {
                 $Previsto_Para_Data_ultimo_Sv_Red[$h] = $data_ultimo_sv_red;
                 //  echo $Folga_Obrigatoria .'<br>'. $Postos_Servico[$busca]. ' <br>'; echo $nome_de_guerra . '<br>';
                 $Escalados_Previstos[$h] = $Previsto_Para_Id[$h];
+               
                 $h++;
             }
-
+        }else{
+            $Previsto_Para_Id[$h] = '377';
+            $Previsto_Nome_Graduacao[$h] = 'NENHUM MILITAR ';
+            $Previsto_Para_Nome[$h] = 'DISPONIVEL';
+            $Previsto_Para_Graduacao[$h] = '1';
+            $h++;
+        }
 
 
             if (isset($Previsto_Para_Id)) {
@@ -253,6 +261,7 @@ if (isset($_POST['escala'])) {
             } else {
                 $Previstos_Escalados = '(0)';
             }
+           
             $busca++;
         }
         //  echo $Postos_Qtd[2];
