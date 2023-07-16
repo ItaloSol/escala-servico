@@ -113,7 +113,6 @@ while ($reg = $query_registro->fetch(PDO::FETCH_ASSOC)) {
 //
 //  INATIVOS
 //
-//
 //      //      //      //      //
 /// CABOS INATIVOS
 $query_registro = $conexao->prepare("SELECT * FROM militares WHERE atividade = '0' AND graduacao = '3' ORDER BY data_ultimo_sv ASC , antiguidade DESC ");
