@@ -81,12 +81,7 @@ if ($reg = $query_registro->fetch(PDO::FETCH_ASSOC)) {
     $graduacao = $reg['graduacao'];
 }
 
-// $asdasd_Posdao = $conexao->prepare("SELECT posto_graduacao , count(posto_graduacao) as qtd, SUM(qtd_mil) AS qtd_diaria 
-// FROM posto WHERE posto_graduacao = '$id_graduacao' AND status_posto = 1 AND tipo_folga != 'data_ultimo_sv_red' AND tipo_folga != 'missao_red' AND tipo_folga != 'escalado_externo_red' AND tipo_folga != 'externo_red' " );
-// $asdasd_Posdao->execute();     
-// if($reg2 = $asdasd_Posdao->fetch(PDO::FETCH_ASSOC)) { 
-//     $total_diario = $reg2['qtd_diaria'];
-// }
+
 
 $query_registro = $conexao->prepare("SELECT * FROM graduacoes ");
 $query_registro->execute(); //EXECUTA TABELA
