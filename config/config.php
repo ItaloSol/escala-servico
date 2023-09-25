@@ -10,10 +10,10 @@ define('DIRREQ', "{$_SERVER['DOCUMENT_whise']}{$bar}{$dirInt}");
  //echo DIRPAGE."<br>".DIRREQ;
 
 // Banco de dados
-define('HOST','10.166.65.167');
-define('DB','bancosv');
-define('USER','dantas');
-define('PASS','grafex');
+define('HOST','');
+define('DB','');
+define('USER','');
+define('PASS','');
 
 // Incluir arquivos
 include(DIRREQ.'lib/composer/vendor/autoload.php');
