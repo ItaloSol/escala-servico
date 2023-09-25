@@ -3,28 +3,28 @@
 
         if(isset($_SESSION['bd'])){
             if($_SESSION['bd'][0] == 'bd1'){
-                $server = "10.166.65.167";
-                $usuario = "dantas";
-                $senha = "grafex";
-                $banco = "bancosv3";
+                $server = "";
+                $usuario = "";
+                $senha = "";
+                $banco = "";
             }
             if($_SESSION['bd'][0] == 'bd2'){
-                $server = "10.166.65.167";
-                $usuario = "dantas";
-                $senha = "grafex";
-                $banco = "bancosv2";
+                $server = "";
+                $usuario = "";
+                $senha = "";
+                $banco = "";
             }
             if($_SESSION['bd'][0] == 'bd3'){
                 $server = "127.0.0.1";
                 $usuario = "root";
                 $senha = "";
-                $banco = "bancosv";
+                $banco = "";
             }
         }else{
-            $server = "10.166.65.167";
-                $usuario = "dantas";
-                $senha = "grafex";
-                $banco = "bancosv3";
+            $server = "";
+                $usuario = "";
+                $senha = "";
+                $banco = "";
         }
 
 
