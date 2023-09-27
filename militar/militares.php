@@ -331,8 +331,8 @@ include_once('../dados/contagem.php');
                                 <div class="mdl-ce11">
                                     <main class="">
 
-                                        <div style="width: 150%;">
-                                            <div class="mdl-cell mdl-cell--12-col action account_manage">
+                                        <div style="width: 180%;">
+                                            <div style="overflow-x: hidden;" class="mdl-cell mdl-cell--12-col action account_manage">
 
                         <body>
                             <div id="content">
@@ -463,6 +463,7 @@ include_once('../dados/contagem.php');
                                             echo '<th align="center"> <a href="militares.php?Ord=DVDESC">Data Vermelha</a></th>';
                                             echo '<th align="center"> <a href="militares.php?Ord=DMDESC">Data Missão</a></th>';
                                             echo '<th align="center"> <a href="militares.php?Ord=DXDESC">Data Externa</a></th>';
+                                            echo '<th align="center"> <a>Editar</a></th>';
                                             $ORDEN = ' m.antiguidade ASC';
                                         }
                                         if ($_GET['Ord'] == 'GASC') {
@@ -479,6 +480,7 @@ include_once('../dados/contagem.php');
                                             echo '<th align="center"> <a href="militares.php?Ord=DVDESC">Data Vermelha</a></th>';
                                             echo '<th align="center"> <a href="militares.php?Ord=DMDESC">Data Missão</a></th>';
                                             echo '<th align="center"> <a href="militares.php?Ord=DXDESC">Data Externa</a></th>';
+                                            echo '<th align="center"> <a>Editar</a></th>';
                                             $ORDEN = ' m.graduacao ASC';
                                         }
                                         if ($_GET['Ord'] == 'CDESC') {
@@ -495,6 +497,7 @@ include_once('../dados/contagem.php');
                                             echo '<th align="center"> <a href="militares.php?Ord=DVDESC">Data Vermelha</a></th>';
                                             echo '<th align="center"> <a href="militares.php?Ord=DMDESC">Data Missão</a></th>';
                                             echo '<th align="center"> <a href="militares.php?Ord=DXDESC">Data Externa</a></th>';
+                                            echo '<th align="center"> <a>Editar</a></th>';
                                             $ORDEN = ' m.fk_cursos ASC';
                                         }
                                         if ($_GET['Ord'] == 'NASC') {
@@ -511,6 +514,7 @@ include_once('../dados/contagem.php');
                                             echo '<th align="center"> <a href="militares.php?Ord=DVDESC">Data Vermelha</a></th>';
                                             echo '<th align="center"> <a href="militares.php?Ord=DMDESC">Data Missão</a></th>';
                                             echo '<th align="center"> <a href="militares.php?Ord=DXDESC">Data Externa</a></th>';
+                                            echo '<th align="center"> <a>Editar</a></th>';
                                             $ORDEN = ' m.nome_de_guerra ASC';
                                         }
                                         if ($_GET['Ord'] == 'SASC') {
@@ -526,6 +530,7 @@ include_once('../dados/contagem.php');
                                             echo '<th align="center"> <a href="militares.php?Ord=DVDESC">Data Vermelha</a></th>';
                                             echo '<th align="center"> <a href="militares.php?Ord=DMDESC">Data Missão</a></th>';
                                             echo '<th align="center"> <a href="militares.php?Ord=DXDESC">Data Externa</a></th>';
+                                            echo '<th align="center"> <a>Editar</a></th>';
                                             $ORDEN = ' m.servico ASC';
                                         }
                                         if ($_GET['Ord'] == 'TASC') {
@@ -541,6 +546,7 @@ include_once('../dados/contagem.php');
                                             echo '<th align="center"> <a href="militares.php?Ord=DVDESC">Data Vermelha</a></th>';
                                             echo '<th align="center"> <a href="militares.php?Ord=DMDESC">Data Missão</a></th>';
                                             echo '<th align="center"> <a href="militares.php?Ord=DXDESC">Data Externa</a></th>';
+                                            echo '<th align="center"> <a>Editar</a></th>';
                                             $ORDEN = ' m.atividade ASC';
                                         }
                                         if ($_GET['Ord'] == 'IMESC') {
@@ -556,6 +562,7 @@ include_once('../dados/contagem.php');
                                             echo '<th align="center"> <a href="militares.php?Ord=DVDESC">Data Vermelha</a></th>';
                                             echo '<th align="center"> <a href="militares.php?Ord=DMDESC">Data Missão</a></th>';
                                             echo '<th align="center"> <a href="militares.php?Ord=DXDESC">Data Externa</a></th>';
+                                            echo '<th align="center"> <a>Editar</a></th>';
                                             $ORDEN = ' m.fk_impedimento ASC';
                                         }
                                         if ($_GET['Ord'] == 'DPASC') {
@@ -572,6 +579,7 @@ include_once('../dados/contagem.php');
                                             echo '<th align="center"> <a href="militares.php?Ord=DVDESC">Data Vermelha</a></th>';
                                             echo '<th align="center"> <a href="militares.php?Ord=DMDESC">Data Missão</a></th>';
                                             echo '<th align="center"> <a href="militares.php?Ord=DXDESC">Data Externa</a></th>';
+                                            echo '<th align="center"> <a>Editar</a></th>';
                                             $ORDEN = ' m.data_ultimo_sv ASC';
                                         }
                                         if ($_GET['Ord'] == 'DVASC') {
@@ -588,6 +596,7 @@ include_once('../dados/contagem.php');
                                                 </svg></a></th>';
                                             echo '<th align="center"> <a href="militares.php?Ord=DMDESC">Data Missão</a></th>';
                                             echo '<th align="center"> <a href="militares.php?Ord=DXDESC">Data Externa</a></th>';
+                                            echo '<th align="center"> <a>Editar</a></th>';
                                             $ORDEN = ' m.data_ultimo_sv_red ASC';
                                         }
                                         if ($_GET['Ord'] == 'DMASC') {
@@ -604,6 +613,7 @@ include_once('../dados/contagem.php');
                                             <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
                                                 </svg></a></th>';
                                             echo '<th align="center"> <a href="militares.php?Ord=DXDESC">Data Externa</a></th>';
+                                            echo '<th align="center"> <a>Editar</a></th>';
                                             $ORDEN = ' m.missao ASC';
                                         }
                                         if ($_GET['Ord'] == 'DXASC') {
@@ -637,6 +647,7 @@ include_once('../dados/contagem.php');
                                             echo '<th align="center"> <a href="militares.php?Ord=DVASC">Data Vermelha</a></th>';
                                             echo '<th align="center"> <a href="militares.php?Ord=DMASC">Data Missão</a></th>';
                                             echo '<th align="center"> <a href="militares.php?Ord=DXASC">Data Externa</a></th>';
+                                            echo '<th align="center"> <a>Editar</a></th>';
                                             $ORDEN = ' m.antiguidade DESC';
                                         }
                                         if ($_GET['Ord'] == 'GDESC') {
@@ -653,6 +664,7 @@ include_once('../dados/contagem.php');
                                             echo '<th align="center"> <a href="militares.php?Ord=DVASC">Data Vermelha</a></th>';
                                             echo '<th align="center"> <a href="militares.php?Ord=DMASC">Data Missão</a></th>';
                                             echo '<th align="center"> <a href="militares.php?Ord=DXASC">Data Externa</a></th>';
+                                            echo '<th align="center"> <a>Editar</a></th>';
                                             $ORDEN = ' m.graduacao DESC';
                                         }
                                         if ($_GET['Ord'] == 'NDESC') {
@@ -669,6 +681,7 @@ include_once('../dados/contagem.php');
                                             echo '<th align="center"> <a href="militares.php?Ord=DVASC">Data Vermelha</a></th>';
                                             echo '<th align="center"> <a href="militares.php?Ord=DMASC">Data Missão</a></th>';
                                             echo '<th align="center"> <a href="militares.php?Ord=DXASC">Data Externa</a></th>';
+                                            echo '<th align="center"> <a>Editar</a></th>';
                                             $ORDEN = ' m.nome_de_guerra DESC';
                                         }
                                         if ($_GET['Ord'] == 'SDESC') {
@@ -684,6 +697,7 @@ include_once('../dados/contagem.php');
                                             echo '<th align="center"> <a href="militares.php?Ord=DVASC">Data Vermelha</a></th>';
                                             echo '<th align="center"> <a href="militares.php?Ord=DMASC">Data Missão</a></th>';
                                             echo '<th align="center"> <a href="militares.php?Ord=DXASC">Data Externa</a></th>';
+                                            echo '<th align="center"> <a>Editar</a></th>';
                                             $ORDEN = ' m.servico DESC';
                                         }
                                         if ($_GET['Ord'] == 'TDESC') {
@@ -700,6 +714,7 @@ include_once('../dados/contagem.php');
                                             echo '<th align="center"> <a href="militares.php?Ord=DVASC">Data Vermelha</a></th>';
                                             echo '<th align="center"> <a href="militares.php?Ord=DMASC">Data Missão</a></th>';
                                             echo '<th align="center"> <a href="militares.php?Ord=DXASC">Data Externa</a></th>';
+                                            echo '<th align="center"> <a>Editar</a></th>';
                                             $ORDEN = ' m.atividade DESC';
                                         }
                                         if ($_GET['Ord'] == 'AASC') {
@@ -716,6 +731,7 @@ include_once('../dados/contagem.php');
                                             echo '<th align="center"> <a href="militares.php?Ord=DVASC">Data Vermelha</a></th>';
                                             echo '<th align="center"> <a href="militares.php?Ord=DMASC">Data Missão</a></th>';
                                             echo '<th align="center"> <a href="militares.php?Ord=DXASC">Data Externa</a></th>';
+                                            echo '<th align="center"> <a>Editar</a></th>';
                                             $ORDEN = ' m.fk_impedimento DESC';
                                         }
                                         if ($_GET['Ord'] == 'DPDESC') {
@@ -732,6 +748,7 @@ include_once('../dados/contagem.php');
                                             echo '<th align="center"> <a href="militares.php?Ord=DVASC">Data Vermelha</a></th>';
                                             echo '<th align="center"> <a href="militares.php?Ord=DMASC">Data Missão</a></th>';
                                             echo '<th align="center"> <a href="militares.php?Ord=DXASC">Data Externa</a></th>';
+                                            echo '<th align="center"> <a>Editar</a></th>';
                                             $ORDEN = ' m.data_ultimo_sv DESC';
                                         }
                                         if ($_GET['Ord'] == 'DVDESC') {
@@ -748,6 +765,7 @@ include_once('../dados/contagem.php');
                                             </svg></a></th>';
                                             echo '<th align="center"> <a href="militares.php?Ord=DMASC">Data Missão</a></th>';
                                             echo '<th align="center"> <a href="militares.php?Ord=DXASC">Data Externa</a></th>';
+                                            echo '<th align="center"> <a>Editar</a></th>';
                                             $ORDEN = ' m.data_ultimo_sv_red DESC';
                                         }
                                         if ($_GET['Ord'] == 'DMDESC') {
@@ -764,6 +782,7 @@ include_once('../dados/contagem.php');
                                             <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
                                             </svg></a></th>';
                                             echo '<th align="center"> <a href="militares.php?Ord=DXASC">Data Externa</a></th>';
+                                            echo '<th align="center"> <a>Editar</a></th>';
                                             $ORDEN = ' m.missao DESC';
                                         }
                                         if ($_GET['Ord'] == 'DXDESC') {
@@ -796,6 +815,7 @@ include_once('../dados/contagem.php');
                                             echo '<th align="center"> <a href="militares.php?Ord=DVASC">Data Vermelha</a></th>';
                                             echo '<th align="center"> <a href="militares.php?Ord=DMASC">Data Missão</a></th>';
                                             echo '<th align="center"> <a href="militares.php?Ord=DXASC">Data Externa</a></th>';
+                                            echo '<th align="center"> <a>Editar</a></th>';
                                             $ORDEN = ' m.fk_cursos DESC';
                                         }
                                     } else {
@@ -812,6 +832,7 @@ include_once('../dados/contagem.php');
                                         echo '<th align="center"> <a href="militares.php?Ord=DVASC">Data Vermelha</a></th>';
                                         echo '<th align="center"> <a href="militares.php?Ord=DMASC">Data Missão</a></th>';
                                         echo '<th align="center"> <a href="militares.php?Ord=DXASC">Data Externa</a></th>';
+                                        echo '<th align="center"> <a>Editar</a></th>';
                                         $ORDEN = ' m.nome_de_guerra ASC';
                                     }
                                     $query_data_ultimo_sv = $conexao->prepare("SELECT * FROM militares m INNER JOIN graduacoes g ON g.id_graduacao = m.graduacao INNER JOIN cursos c ON m.fk_cursos = c.id_curso  WHERE m.servico != 'ESCALANTE' AND m.servico != 'LICENCIADO'  ORDER BY $ORDEN , m.antiguidade DESC "); //SELECIONA A TABELA DE MILITARES
