@@ -15,7 +15,7 @@ include_once('../conexoes/conexaoo.php');
 include_once('../conexoes/conexao.php');
 
 if (isset($_POST['svdefinido'])) {
-    $_SESSION['msg'] = "<h2 style='color:green;'>Serviço adicionado com sucesso!!!</h2>";
+   
 
     $Quantidade_De_Militares = $_POST['qtd'];
     $Data_A_Definir = $_POST['data'];
@@ -79,11 +79,11 @@ if (isset($_POST['svdefinido'])) {
         $_SESSION['msg'] = "<h2 style='color:red;'>Erro! Nem todos os nomes foram selecionados!!!</h2>";
         header('Location: autoescala.php');
     }
+    $_SESSION['msg'] = "<h2 style='color:green;'>Serviço adicionado com sucesso!!!</h2>";
     header('Location: autoescala.php');
 }
 //      //      //      //      //
 if (isset($_POST['definirsv'])) {
-    $_SESSION['msg'] = "<h2 style='color:green;'>Serviço adicionado com sucesso!!!</h2>";
 
     $Quantidade_De_Militares = $_POST['qtd'];
     $Data_A_Definir = $_POST['data'];
@@ -138,12 +138,12 @@ if (isset($_POST['definirsv'])) {
         echo ' Nome => ' . $Posto_Id_Definir[$a] . ' $M => ' . $Definir_Servico_Por_Id[$a] . '<br>';
         $a++;
     }
+    $_SESSION['msg'] = "<h2 style='color:green;'>Serviço adicionado com sucesso!!!</h2>";
     header('Location: autoescala.php');
 }
 //      //      //      //      //
 if (isset($_POST['substituir'])) {
 
-    $_SESSION['msg'] = "<h2 style='color:green;'>Serviço substituido com sucesso!!!</h2>";
     date_default_timezone_set('America/Sao_Paulo');
     $datahora   = date('d/m/Y H:i:s a', time());
 
@@ -250,12 +250,7 @@ if (isset($_POST['substituir'])) {
         echo '------------------ Fim do  ----------------<br>';
         $a++;
     }
-
-
-
-
-
-
+    $_SESSION['msg'] = "<h2 style='color:green;'>Serviço substituido com sucesso!!!</h2>";
 
     header('Location: autoescala.php');
 }
