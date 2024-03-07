@@ -212,40 +212,40 @@ if (isset($_POST['escala'])) {
             }
             $query_registro->execute(); //EXECUTA TABELA
             if ($query_registro->rowCount() > 0) {
-            while ($reg = $query_registro->fetch(PDO::FETCH_ASSOC)) {
-                // echo '<br>EXISTE<br>';
-                $id = $reg['id'];
-                $antiguidade = $reg['antiguidade'];
-                $nome_de_guerra = $reg['nome_de_guerra'];
-                $servico = $reg['servico'];
-                $graduacao = $reg['graduacao'];
-                $nome_graduacao = $reg['nome_graduacao'];
-                $atividade = $reg['atividade'];
-                $data_ultimo_sv = $reg['data_ultimo_sv'];
-                $fk_impedimento = $reg['fk_impedimento'];
-                $data_ultimo_sv_red = $reg['data_ultimo_sv_red'];
-                $Previsto_Para_Id[$h] = $id;
-                $Previsto_Nome_Graduacao[$h] = $nome_graduacao;
-                $Previsto_Para_Antiguidade[$h] = $antiguidade;
-                $Previsto_Para_Nome[$h] = $nome_de_guerra;
-                $Previsto_Para_Servico[$h] = $servico;
-                $Previsto_Para_Graduacao[$h] = $graduacao;
-                $Previsto_Para_Atividade[$h] = $atividade;
-                $Previsto_Para_Data_Ultimo_Sv[$h] = $data_ultimo_sv;
-                $Previsto_Para_Id_Impedimento[$h] = $fk_impedimento;
-                $Previsto_Para_Data_ultimo_Sv_Red[$h] = $data_ultimo_sv_red;
-                //  echo $Folga_Obrigatoria .'<br>'. $Postos_Servico[$busca]. ' <br>'; echo $nome_de_guerra . '<br>';
-                $Escalados_Previstos[$h] = $Previsto_Para_Id[$h];
-               
+                while ($reg = $query_registro->fetch(PDO::FETCH_ASSOC)) {
+                    // echo '<br>EXISTE<br>';
+                    $id = $reg['id'];
+                    $antiguidade = $reg['antiguidade'];
+                    $nome_de_guerra = $reg['nome_de_guerra'];
+                    $servico = $reg['servico'];
+                    $graduacao = $reg['graduacao'];
+                    $nome_graduacao = $reg['nome_graduacao'];
+                    $atividade = $reg['atividade'];
+                    $data_ultimo_sv = $reg['data_ultimo_sv'];
+                    $fk_impedimento = $reg['fk_impedimento'];
+                    $data_ultimo_sv_red = $reg['data_ultimo_sv_red'];
+                    $Previsto_Para_Id[$h] = $id;
+                    $Previsto_Nome_Graduacao[$h] = $nome_graduacao;
+                    $Previsto_Para_Antiguidade[$h] = $antiguidade;
+                    $Previsto_Para_Nome[$h] = $nome_de_guerra;
+                    $Previsto_Para_Servico[$h] = $servico;
+                    $Previsto_Para_Graduacao[$h] = $graduacao;
+                    $Previsto_Para_Atividade[$h] = $atividade;
+                    $Previsto_Para_Data_Ultimo_Sv[$h] = $data_ultimo_sv;
+                    $Previsto_Para_Id_Impedimento[$h] = $fk_impedimento;
+                    $Previsto_Para_Data_ultimo_Sv_Red[$h] = $data_ultimo_sv_red;
+                    //  echo $Folga_Obrigatoria .'<br>'. $Postos_Servico[$busca]. ' <br>'; echo $nome_de_guerra . '<br>';
+                    $Escalados_Previstos[$h] = $Previsto_Para_Id[$h];
+
+                    $h++;
+                }
+            } else {
+                $Previsto_Para_Id[$h] = '377';
+                $Previsto_Nome_Graduacao[$h] = 'NENHUM MILITAR ';
+                $Previsto_Para_Nome[$h] = 'DISPONIVEL';
+                $Previsto_Para_Graduacao[$h] = '1';
                 $h++;
             }
-        }else{
-            $Previsto_Para_Id[$h] = '377';
-            $Previsto_Nome_Graduacao[$h] = 'NENHUM MILITAR ';
-            $Previsto_Para_Nome[$h] = 'DISPONIVEL';
-            $Previsto_Para_Graduacao[$h] = '1';
-            $h++;
-        }
 
 
             if (isset($Previsto_Para_Id)) {
@@ -261,7 +261,7 @@ if (isset($_POST['escala'])) {
             } else {
                 $Previstos_Escalados = '(0)';
             }
-           
+
             $busca++;
         }
         //  echo $Postos_Qtd[2];
