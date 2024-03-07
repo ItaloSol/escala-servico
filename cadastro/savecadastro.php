@@ -23,6 +23,7 @@ if(isset($_POST['submit'])){
     $cpf = $_POST['cpf'];
     $d = 8;
     $a = 0;
+    $dia = '';
     while($a < $d ){
       if(isset($_POST['dia'.$a])){
         if(isset($dia)){
@@ -34,7 +35,8 @@ if(isset($_POST['submit'])){
       }
       $a++;
     }
-  //  echo $dia . '<BR>';
+    
+    echo $dia . '<BR>';
     $svP= $_POST['data_ultimo_sv'];
     $svR= $_POST['data_ultimo_sv_red'];
     $svM= $_POST['missao'];
@@ -69,13 +71,14 @@ if(isset($_POST['submit'])){
   */
   echo  $antiguidade .'<BR>'. $nome_de_guerra .'<BR>'. $servico .'<BR>'. $graduacao .'<BR>'. $atividade .'<BR>'. $svP .'<BR>'. $svR .'<BR>'. $sve .'<BR>'.  $sver .'<BR>'. $svM .'<BR>'. $svmr .'<BR>'. $svep .'<BR>'. $sver .'<BR>'. $cpf .'<BR>'. $curso ;
   date_default_timezone_set('America/Sao_Paulo'); $datahora   = date('d/m/Y H:i:s a', time());
-  $Atividade_militar = $conexao->prepare("SELECT * FROM militares m INNER JOIN graduacoes g ON m.graduacao = g.id_graduacao WHERE m.nome_de_guerra = '$nome_de_guerra' AND antiguidade = '$antiguidade' ");//SELECIONA A TABELA DE MILITARES
-  $Atividade_militar->execute(); //EXECUTA TABELA
-  while($atv_mil = $Atividade_militar->fetch(PDO::FETCH_ASSOC)) { // MOSTRA OS RESULTADOS
-      $graduacao = $atv_mil['nome_graduacao'];
-      $nome = $atv_mil['nome_de_guerra'];
-      $observacao = $graduacao . ' '. $nome;
-  }
+  // $Atividade_militar = $conexao->prepare("SELECT * FROM militares m INNER JOIN graduacoes g ON m.graduacao = g.id_graduacao WHERE m.nome_de_guerra = '$nome_de_guerra' AND antiguidade = '$antiguidade' ");//SELECIONA A TABELA DE MILITARES
+  // $Atividade_militar->execute(); //EXECUTA TABELA
+  // while($atv_mil = $Atividade_militar->fetch(PDO::FETCH_ASSOC)) { // MOSTRA OS RESULTADOS
+  //     $graduacao = $atv_mil['nome_graduacao'];
+  //     $nome = $atv_mil['nome_de_guerra'];
+  //     $observacao = $graduacao . ' '. $nome_de_guerra;
+  // }
+  $observacao = $graduacao . ' '. $nome_de_guerra;
   $datahoraa = (string) $datahora;    //  string $datahora;
   $sqlAtividade = "INSERT INTO atividade (observacao, data_hora, fk_alteracao, fk_usuario) VALUES ( '$observacao', '$datahoraa', '4', '$id_desse_user')";
   $result = $conect->query($sqlAtividade);
