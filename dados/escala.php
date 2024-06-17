@@ -78,6 +78,7 @@ if (isset($_POST['escala'])) {
    $idpostoe = $escala['id_posto'];
    $dataescala = $escala['data'];
    $nome_de_guerraescala = $escala['nome_de_guerra'];
+   $nome_secao = $escala['secao'];
    $servicoescala = $escala['tipo'];
    $postoescala = $escala['nome_posto'];
    $idmilitar = $escala['id'];
@@ -109,6 +110,7 @@ if (isset($_POST['escala'])) {
        $Desc_Escala_Militar_Id[$a] = $idmilitar;
        $Desc_Escala_Militar_Antiguidade[$a] = $antiguidade;
        $Desc_Escala_Militar_Nome[$a] = $nome_de_guerraescala;
+       $Desc_Escala_Nome_Secao[$a] = $nome_secao;
        $Desc_Escala_Militar_Servico[$a] = $servico;
        $Desc_Escala_Militar_Graduacao[$a] = $graduacao;
        $Desc_Escala_Militar_Atividade[$a] = $atividade;

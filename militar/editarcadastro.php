@@ -43,6 +43,8 @@ if(!empty($_GET['id'])){
       $data_ultimo_sv_red = $user_data['data_ultimo_sv_red'];
       $graduacao = $user_data['graduacao'];
       $antiguidade = $user_data['antiguidade'];
+      $secao = $user_data['secao'];
+      $data_nascimento = $user_data['data_nasc'];
       $missao = $user_data['missao'];
       $missao_red = $user_data['missao_red'];
       $data_ultimo_sv = $user_data['data_ultimo_sv'];
@@ -351,10 +353,18 @@ if(isset($_SESSION['msg'])){
             </div> -->
 
             <div class="mb-3">
-              <label for="endereco2">Antiguidade <span class="text-muted">(Opcional)</span></label>
-              <input type="text" class="form-control" name="antiguidade" id="endereco2" value="<?= $antiguidade ?>" placeholder="Antiguidade do militar">
+              <label for="antiguidade">Antiguidade <span class="text-muted">(Opcional)</span></label>
+              <input type="text" class="form-control" name="antiguidade" id="antiguidade" value="<?= $antiguidade ?>" placeholder="Antiguidade do militar">
             </div>
-
+            <div class="mb-3">
+              <label for="data">Data de nascimeto <span class="text-muted">(Antiguidade sera pela data de nascimento)</span></label>
+              <input type="date" class="form-control" name="data_nasc" id="data" value="<?= $data_nascimento ?>" placeholder="Data de nascimeto do militar">
+            </div>
+            <div class="mb-3">
+              <label for="secao">Seção <span class="text-muted">(Militares com a mesma seção não tiram serviço juntos.)</span></label>
+              <input type="text" class="form-control" name="secao" id="secao" value="<?= $secao ?>" placeholder="Seção do militar">
+            </div>
+           
             <hr class="mb-4"><div class="row">
                                 <div class="col-md-6 mb-3">
             <h4 class="mb-3">Serviço</h4>

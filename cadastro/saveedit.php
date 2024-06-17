@@ -18,6 +18,8 @@ if(isset($_POST['update'])){
   $nome_de_guerra = strtoupper($_POST['nome_de_guerra']);
   $graduacao = $_POST['graduacao'];
   $antiguidade = $_POST['antiguidade'];
+  $secao = $_POST['secao'];
+  $data_nasc = $_POST['data_nasc'];
   $servico = strtoupper($_POST['SERVICO']);
   $atividade = $_POST['atividade'];
   $curso = $_POST['curso'];
@@ -58,7 +60,8 @@ if(isset($_POST['update'])){
    antiguidade='$antiguidade',
    nome_de_guerra='$nome_de_guerra',
    servico='$servico',
-   
+    secao = '$secao',
+    data_nasc = '$data_nasc',
    data_de_sv='$dia',
    graduacao='$graduacao',
    atividade='$atividade', 

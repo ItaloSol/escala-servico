@@ -13,6 +13,13 @@
             $validacao = $user['valida'];
             $id_usuario = $user["id_senha"];
             
+            $query_registro = $conexao->prepare("SELECT * FROM militares WHERE id = '$id_desse_user'" );
+            $query_registro->execute(); //EXECUTA TABELA
+
+            if($reg = $query_registro->fetch(PDO::FETCH_ASSOC)) { 
+                $data_nasc = $reg['data_nasc'];
+            }
+            
            
 
             session_start();
@@ -27,11 +34,19 @@
               $sqlAtividade = "INSERT INTO atividade (observacao, data_hora, fk_alteracao, fk_usuario) VALUES ( '$observacao', '$datahoraa', '27', '$id_desse_user')";
             $result = $conect->query($sqlAtividade);
           
+            if($data_nasc == '2024-01-01' || $validacao != 1){
+
+          
+            if($data_nasc == '2024-01-01'){
+                header("Location: data_nascimento.php"); 
+            }
             if($validacao != 1){
                 header("Location: cpf.php"); 
-            }else{
-            header("Location: ../resumo/painel.php"); 
+            }  }else{
+                header("Location: ../resumo/painel.php"); 
             }
+           
+           
         }else{
             session_start();
             $_SESSION['msg'] = "<h2 style='color:red;'>Erro o Login/Senha não existe!</h2>";

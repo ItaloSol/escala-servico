@@ -20,6 +20,8 @@ if(isset($_POST['submit'])){
     $servico = strtoupper($_POST['SERVICO']);
     $atividade = $_POST['atividade'];
     $curso = $_POST['curso'];
+    $secao = $_POST['secao'];
+  $data_nasc = $_POST['data_nasc'];
     $cpf = $_POST['cpf'];
     $d = 8;
     $a = 0;
@@ -84,8 +86,8 @@ if(isset($_POST['submit'])){
   $result = $conect->query($sqlAtividade);
 
  
-     $query = "INSERT INTO militares(antiguidade,nome_de_guerra,servico,graduacao,atividade,data_ultimo_sv,data_ultimo_sv_red, externo, externo_red,missao, missao_red, escalado_externo,escalado_externo_red,cpf,fk_cursos,data_de_sv) VALUES 
-     ('$antiguidade','$nome_de_guerra','$servico','$graduacao','$atividade','$svP','$svR','$sve', '$sver','$svM','$svmr','$svep','$sver','$cpf','$curso','$dia')";
+     $query = "INSERT INTO militares(antiguidade,nome_de_guerra,servico,graduacao,atividade,data_ultimo_sv,data_ultimo_sv_red, externo, externo_red,missao, missao_red, escalado_externo,escalado_externo_red,cpf,fk_cursos,data_de_sv, secao, data_nasc) VALUES 
+     ('$antiguidade','$nome_de_guerra','$servico','$graduacao','$atividade','$svP','$svR','$sve', '$sver','$svM','$svmr','$svep','$sver','$cpf','$curso','$dia','$secao','$data_nasc')";
                                                      
    echo $query ;
             

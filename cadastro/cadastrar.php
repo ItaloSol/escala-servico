@@ -227,7 +227,14 @@
               Por favor, insira um CPF válido.
               </div>
             </div>
-
+            <div class="mb-3">
+              <label for="data">Data de nascimeto <span class="text-muted">(Antiguidade sera pela data de nascimento)</span></label>
+              <input type="date" class="form-control" name="data_nasc" id="data"  placeholder="Data de nascimeto do militar">
+            </div>
+            <div class="mb-3">
+              <label for="secao">Seção <span class="text-muted">(Militares com a mesma seção não tiram serviço juntos.)</span></label>
+              <input type="text" class="form-control" name="secao" id="secao"  placeholder="Seção do militar">
+            </div>
             
             <hr class="mb-4">
                                 <div class="col-md-6 mb-3">
