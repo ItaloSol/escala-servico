@@ -137,6 +137,7 @@ if ($Escala == false) {
                 }
               
                 echo $Previsto_Para_Nome[$mostra];
+                if($adm == 1){ echo '<span style=" font-size: 10px;"> Seção '. $Previsto_Para_Nome_secao[$mostra].'</span>'; }
                 if (isset($Anotacao)) {
                     echo '⚠️';
                 }
@@ -182,6 +183,7 @@ if ($Escala == false) {
             }
 
             echo $Previsto_Para_Nome[$mostra];
+            if($adm == 1){ echo '<span style=" font-size: 10px;"> Seção '. $Previsto_Para_Nome_secao[$mostra].'</span>';}
             if (isset($Anotacao)) {
                 echo '⚠️';
             }
@@ -263,7 +265,8 @@ if ($Escala == true) {
                         }
                         echo $gradentrou.' ' . $entrou;
                     } else {
-                        echo $Desc_Escala_Militar_Nome[$Verificar_Data_Desc_Escala];
+                        echo $Desc_Escala_Militar_Nome[$Verificar_Data_Desc_Escala]; 
+                        if($adm == 1){ echo '<span style=" font-size: 10px;"> Seção '. $Desc_Escala_Nome_Secao[$Verificar_Data_Desc_Escala].'</span>'; }
                     }
                     if ($Desc_Subistituido_S1_Id[$Verificar_Data_Desc_Escala] != null) {
                         $query_registro = $conexao->prepare("SELECT * FROM militares m INNER JOIN graduacoes g ON m.graduacao = g.id_graduacao  WHERE id = $Desc_Subistituido_S1_Id[$Verificar_Data_Desc_Escala]");
@@ -292,7 +295,9 @@ if ($Escala == true) {
                     onclick="location.href="#"">
                     ' . $Desc_Escala_Militar_Graduacao[$Verificar_Data_Desc_Escala]
                         . "  "
-                        . $Desc_Escala_Militar_Nome[$Verificar_Data_Desc_Escala] . "<a onclick='acaoinfo()' class='abririnfo' href='#'>
+                        . $Desc_Escala_Militar_Nome[$Verificar_Data_Desc_Escala];
+                        if($adm == 1){ echo  "<span style=' font-size: 10px;'> Seção ". $Desc_Escala_Nome_Secao[$Verificar_Data_Desc_Escala]."</span>";}
+                        echo "<a onclick='acaoinfo()' class='abririnfo' href='#'>
                     <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAlFJREFUSEuFlo1VGzEMx3+ahHSCJBPACGGCsgHJJBwTFCZoukE7QY4NkknUJ1t3ls6XR94DLrZO1v9DMoJ9BNDyy5/Lal73pfbH4+N6TBGeY7ZvkubQWISgc41tvaa799a08SLwqLADdg52RBmBM/AngxPKYX6KNHYyRQIHFd5Q2UTqIpue+AqcBM5T0hI/HbDOtQygrx51AwbgL5SqDfcO5Qk4Ag8eZzGnLCJUBJm0AWVKfvLkmUiH4VTYIW+e4h2V4xJxpPAA/PYq9nPFnYMqjMD1TtCLE/Ps2njMbMeS5YrwgBpUhmrflL2Ru/CGwFELErmC/ojbs1uAXwg3E7ZVl0yWDljpBBPcNJlRBJvyAfxEOKFF5KX7ojkW206XcESLHp/AS6WxyTcKulVhj8rYZev8mev3bXPXRWBU2LcDauxd+MFp6ge3wvrGmHvMWjvaVJ338vKd8fSdBvZmKiJqMApsKzRvqM6ekoqI7eOhNk4uwJc3oyOoHFSRazcmkQPbAX5y14S4iCzwqb3IeJNhVqs+7ia4I6imWfsUmwo8ax2E0UXly1Wrj/tGcyOEKREOKKs+MuQGuqmbk8iNgwmFHbZXwcZy+kRzhueJe4sNo6JHYPkGkFcfWMbpe691GiFt2FFi7Xvrrq7dKwdxXBuvNpf++SUzjevHMn+EjaPskncaNGGLioeKpoiWr8NUos2uUnURdTFlXeTOLcmCpov9GM9b3/myXim3mHDOOnU3Y+BrOZ3zxbLSV9O7K3Mp1NgECQfEm679x3A/0YJep1T4D5W1CDJHUmUMAAAAAElFTkSuQmCC'/>
                     </a>" . ' <br>
                     </li>
@@ -326,7 +331,9 @@ if ($Escala == true) {
                         }
                         echo $gradentrou.' ' . $entrou;
                     } else {
-                        echo $Desc_Escala_Militar_Nome[$Verificar_Data_Desc_Escala] . "";
+                        echo $Desc_Escala_Militar_Nome[$Verificar_Data_Desc_Escala];
+                        if($adm == 1){
+                            echo "<span style=' font-size: 10px;'> Seção ". $Desc_Escala_Nome_Secao[$Verificar_Data_Desc_Escala]."</span>";}
                     }
                     if ($Desc_Subistituido_S1_Id[$Verificar_Data_Desc_Escala] != null) {
 
@@ -356,7 +363,9 @@ if ($Escala == true) {
                     onclick="location.href="#"">
                     ' . $Desc_Escala_Militar_Graduacao[$Verificar_Data_Desc_Escala]
                         . " "
-                        . $Desc_Escala_Militar_Nome[$Verificar_Data_Desc_Escala] . "<a onclick='acaoinfored()' class='abririnfored' href='#'>
+                        . $Desc_Escala_Militar_Nome[$Verificar_Data_Desc_Escala];
+                        if($adm == 1){ echo "<span style=' font-size: 10px;'> Seção ". $Desc_Escala_Nome_Secao[$Verificar_Data_Desc_Escala]."</span>";}
+                            echo"<a onclick='acaoinfored()' class='abririnfored' href='#'>
                     <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAlFJREFUSEuFlo1VGzEMx3+ahHSCJBPACGGCsgHJJBwTFCZoukE7QY4NkknUJ1t3ls6XR94DLrZO1v9DMoJ9BNDyy5/Lal73pfbH4+N6TBGeY7ZvkubQWISgc41tvaa799a08SLwqLADdg52RBmBM/AngxPKYX6KNHYyRQIHFd5Q2UTqIpue+AqcBM5T0hI/HbDOtQygrx51AwbgL5SqDfcO5Qk4Ag8eZzGnLCJUBJm0AWVKfvLkmUiH4VTYIW+e4h2V4xJxpPAA/PYq9nPFnYMqjMD1TtCLE/Ps2njMbMeS5YrwgBpUhmrflL2Ru/CGwFELErmC/ojbs1uAXwg3E7ZVl0yWDljpBBPcNJlRBJvyAfxEOKFF5KX7ojkW206XcESLHp/AS6WxyTcKulVhj8rYZev8mev3bXPXRWBU2LcDauxd+MFp6ge3wvrGmHvMWjvaVJ338vKd8fSdBvZmKiJqMApsKzRvqM6ekoqI7eOhNk4uwJc3oyOoHFSRazcmkQPbAX5y14S4iCzwqb3IeJNhVqs+7ia4I6imWfsUmwo8ax2E0UXly1Wrj/tGcyOEKREOKKs+MuQGuqmbk8iNgwmFHbZXwcZy+kRzhueJe4sNo6JHYPkGkFcfWMbpe691GiFt2FFi7Xvrrq7dKwdxXBuvNpf++SUzjevHMn+EjaPskncaNGGLioeKpoiWr8NUos2uUnURdTFlXeTOLcmCpov9GM9b3/myXim3mHDOOnU3Y+BrOZ3zxbLSV9O7K3Mp1NgECQfEm679x3A/0YJep1T4D5W1CDJHUmUMAAAAAElFTkSuQmCC'/>
                     </a>";
 
@@ -401,6 +410,7 @@ if ($Escala == true) {
                             echo  $entrou;
                         } else {
                             echo $Desc_Escala_Militar_Nome[$Verificar_Data_Desc_Escala];
+                            if($adm == 1){ echo"<span style=' font-size: 10px;'> Seção ". $Desc_Escala_Nome_Secao[$Verificar_Data_Desc_Escala]."</span>";}
                         }
 
                         if ($Desc_Subistituido_S1_Id[$Verificar_Data_Desc_Escala] != null) {
@@ -430,7 +440,9 @@ if ($Escala == true) {
                         onclick="location.href="#"">
                         ' . $Desc_Escala_Militar_Graduacao[$Verificar_Data_Desc_Escala]
                             . " "
-                            . $Desc_Escala_Militar_Nome[$Verificar_Data_Desc_Escala] . "<a onclick='acaoinfo()' class='abririnfo' href='#'>
+                            . $Desc_Escala_Militar_Nome[$Verificar_Data_Desc_Escala];
+                            if($adm == 1){  echo "<span style=' font-size: 10px;'> Seção ". $Desc_Escala_Nome_Secao[$Verificar_Data_Desc_Escala]."</span>";}
+                            echo"<a onclick='acaoinfo()' class='abririnfo' href='#'>
                         <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAlFJREFUSEuFlo1VGzEMx3+ahHSCJBPACGGCsgHJJBwTFCZoukE7QY4NkknUJ1t3ls6XR94DLrZO1v9DMoJ9BNDyy5/Lal73pfbH4+N6TBGeY7ZvkubQWISgc41tvaa799a08SLwqLADdg52RBmBM/AngxPKYX6KNHYyRQIHFd5Q2UTqIpue+AqcBM5T0hI/HbDOtQygrx51AwbgL5SqDfcO5Qk4Ag8eZzGnLCJUBJm0AWVKfvLkmUiH4VTYIW+e4h2V4xJxpPAA/PYq9nPFnYMqjMD1TtCLE/Ps2njMbMeS5YrwgBpUhmrflL2Ru/CGwFELErmC/ojbs1uAXwg3E7ZVl0yWDljpBBPcNJlRBJvyAfxEOKFF5KX7ojkW206XcESLHp/AS6WxyTcKulVhj8rYZev8mev3bXPXRWBU2LcDauxd+MFp6ge3wvrGmHvMWjvaVJ338vKd8fSdBvZmKiJqMApsKzRvqM6ekoqI7eOhNk4uwJc3oyOoHFSRazcmkQPbAX5y14S4iCzwqb3IeJNhVqs+7ia4I6imWfsUmwo8ax2E0UXly1Wrj/tGcyOEKREOKKs+MuQGuqmbk8iNgwmFHbZXwcZy+kRzhueJe4sNo6JHYPkGkFcfWMbpe691GiFt2FFi7Xvrrq7dKwdxXBuvNpf++SUzjevHMn+EjaPskncaNGGLioeKpoiWr8NUos2uUnURdTFlXeTOLcmCpov9GM9b3/myXim3mHDOOnU3Y+BrOZ3zxbLSV9O7K3Mp1NgECQfEm679x3A/0YJep1T4D5W1CDJHUmUMAAAAAElFTkSuQmCC'/>
                         </a>";
                         if ($Desc_Subistituido_S1_Id[$Verificar_Data_Desc_Escala] != null) {
@@ -480,6 +492,7 @@ if ($Escala == true) {
                             echo $gradentrou.' ' . $entrou;
                         } else {
                             echo $Desc_Escala_Militar_Nome[$Verificar_Data_Desc_Escala];
+                            if($adm == 1){ echo"<span style=' font-size: 10px;'> Seção ". $Desc_Escala_Nome_Secao[$Verificar_Data_Desc_Escala]."</span>";}
                         }
                         if ($Desc_Subistituido_S1_Id[$Verificar_Data_Desc_Escala] != null) {
                             $query_registro = $conexao->prepare("SELECT * FROM militares m INNER JOIN graduacoes g ON m.graduacao = g.id_graduacao  WHERE id = $Desc_Subistituido_S1_Id[$Verificar_Data_Desc_Escala]");
@@ -508,7 +521,9 @@ if ($Escala == true) {
                         onclick="location.href="#"">
                         ' . $Desc_Escala_Militar_Graduacao[$Verificar_Data_Desc_Escala]
                             . " "
-                            . $Desc_Escala_Militar_Nome[$Verificar_Data_Desc_Escala] . "<a onclick='acaoinfored()' class='abririnfored' href='#'>
+                            . $Desc_Escala_Militar_Nome[$Verificar_Data_Desc_Escala];
+                            if($adm == 1){echo "<span style=' font-size: 10px;'> Seção ". $Desc_Escala_Nome_Secao[$Verificar_Data_Desc_Escala]."</span>";}
+                                echo"<a onclick='acaoinfored()' class='abririnfored' href='#'>
                         <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAlFJREFUSEuFlo1VGzEMx3+ahHSCJBPACGGCsgHJJBwTFCZoukE7QY4NkknUJ1t3ls6XR94DLrZO1v9DMoJ9BNDyy5/Lal73pfbH4+N6TBGeY7ZvkubQWISgc41tvaa799a08SLwqLADdg52RBmBM/AngxPKYX6KNHYyRQIHFd5Q2UTqIpue+AqcBM5T0hI/HbDOtQygrx51AwbgL5SqDfcO5Qk4Ag8eZzGnLCJUBJm0AWVKfvLkmUiH4VTYIW+e4h2V4xJxpPAA/PYq9nPFnYMqjMD1TtCLE/Ps2njMbMeS5YrwgBpUhmrflL2Ru/CGwFELErmC/ojbs1uAXwg3E7ZVl0yWDljpBBPcNJlRBJvyAfxEOKFF5KX7ojkW206XcESLHp/AS6WxyTcKulVhj8rYZev8mev3bXPXRWBU2LcDauxd+MFp6ge3wvrGmHvMWjvaVJ338vKd8fSdBvZmKiJqMApsKzRvqM6ekoqI7eOhNk4uwJc3oyOoHFSRazcmkQPbAX5y14S4iCzwqb3IeJNhVqs+7ia4I6imWfsUmwo8ax2E0UXly1Wrj/tGcyOEKREOKKs+MuQGuqmbk8iNgwmFHbZXwcZy+kRzhueJe4sNo6JHYPkGkFcfWMbpe691GiFt2FFi7Xvrrq7dKwdxXBuvNpf++SUzjevHMn+EjaPskncaNGGLioeKpoiWr8NUos2uUnURdTFlXeTOLcmCpov9GM9b3/myXim3mHDOOnU3Y+BrOZ3zxbLSV9O7K3Mp1NgECQfEm679x3A/0YJep1T4D5W1CDJHUmUMAAAAAElFTkSuQmCC'/>
                         </a>" . ' <br>
                         </li>

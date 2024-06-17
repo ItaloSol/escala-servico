@@ -1,4 +1,5 @@
 <?php
+ session_start();
  include_once('../conexoes/conecti.php');
  include_once('../acoes/conexao.php');
  include_once('../conexoes/conexaoo.php');
@@ -12,12 +13,12 @@ if(isset($_POST['id_usuario0'])){
   $senha1 = $_POST['senha1'];
   $fk_militar = $_POST['id_usuario0'];
   $adm = 0;
-  
+  echo 'email'. $email;
   $query_registro = $conexao->prepare("SELECT * FROM usuarios WHERE fk_militar = '$fk_militar' " );
 $query_registro->execute(); //EXECUTA TABELA
 $i = 0;
 while($reg = $query_registro->fetch(PDO::FETCH_ASSOC)) { 
-    session_start();
+   
     $_SESSION['msg'] = "<h2 style='color:red;'>Erro o usuário já existe no banco de dados!</h2>";
     header("Location: cadastrologin.php");
 }
@@ -33,6 +34,8 @@ while($reg = $query_registro->fetch(PDO::FETCH_ASSOC)) {
 
         if($senha == $senha1){
             if(isset($fk_militar)){
+              echo "INSERT INTO usuarios(email,senha,nome,adm,fk_militar) VALUES 
+              ('$email','$senha','$nome','$adm','$fk_militar')";
                 $query = $conexao->prepare("INSERT INTO usuarios(email,senha,nome,adm,fk_militar) VALUES 
                ('$email','$senha','$nome','$adm','$fk_militar')");
                          $query->execute();                                             

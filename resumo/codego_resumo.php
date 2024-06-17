@@ -439,7 +439,7 @@ $dia_semanaPt = utf8_encode(strftime('%a', strtotime($dataprevista)));
                                 WHERE m.data_ultimo_sv_red < '$Folga_Obrigatoria' AND m.data_ultimo_sv < '$Folga_Obrigatoria' AND m.externo < '$Folga_Externa' AND m.externo_red < '$Folga_Externa' AND m.id NOT IN $Impedido_Lista 
                                 AND m.escalado_externo < '$Folga_Escalado_Externo' AND m.escalado_externo_red < '$Folga_Escalado_Externo' AND id NOT IN $Impedido_Troca_Lista AND id NOT IN  $Previstos_Escalados AND id NOT IN $Impedido_Dia 
                                 AND m.missao_red < '$Folga_Missao' AND m.missao < '$Folga_Missao' AND id NOT IN $Impedido_Externa AND m.servico != '$Diferente_De[$busca]'  
-                                 AND m.servico != 'LICENCIADO' $Busca_Curso_Graduacao[$busca] $Pagina_Atual_Array[$busca]");
+                                 AND m.servico != 'LICENCIADO' $Busca_Curso_Graduacao[$busca] GROUP BY m.secao HAVING COUNT(*) > 0 $Pagina_Atual_Array[$busca]");
                                     if (isset($id_militar_sv_anterior_[$busca]) && $desativar_repetircao == false) {
                                         $query_registro_Escala = $conexao->prepare("SELECT * FROM militares m INNER JOIN graduacoes g ON m.graduacao = g.id_graduacao
                                     WHERE m.id = $id_militar_sv_anterior");
@@ -452,7 +452,7 @@ $dia_semanaPt = utf8_encode(strftime('%a', strtotime($dataprevista)));
                           WHERE m.data_ultimo_sv < '$Folga_Obrigatoria'  AND m.data_ultimo_sv_red < '$Folga_Obrigatoria' AND m.missao_red < '$Folga_Missao' AND m.externo < '$Folga_Externa' AND m.externo_red < '$Folga_Externa' 
                           AND m.id NOT IN $Impedido_Lista AND m.servico != 'LICENCIADO' AND m.escalado_externo < '$Folga_Escalado_Externo' AND id NOT IN $Impedido_Troca_Lista AND m.escalado_externo_red < '$Folga_Escalado_Externo' 
                           AND id NOT IN $Impedido_Dia AND m.missao < '$Folga_Missao' AND id NOT IN $Impedido_Externa AND m.missao < '$Folga_Missao' AND m.servico != '$Diferente_De[$busca]'  
-                          $Busca_Curso_Graduacao[$busca] $Pagina_Atual_Array[$busca]");
+                          $Busca_Curso_Graduacao[$busca] GROUP BY m.secao HAVING COUNT(*) > 0 $Pagina_Atual_Array[$busca]");
                                     if (isset($id_militar_sv_anterior_[$busca]) && $desativar_repetircao == false) {
                                         $query_registro_Escala = $conexao->prepare("SELECT * FROM militares m INNER JOIN graduacoes g ON m.graduacao = g.id_graduacao
                         WHERE  m.id = $id_militar_sv_anterior");
@@ -471,8 +471,10 @@ $dia_semanaPt = utf8_encode(strftime('%a', strtotime($dataprevista)));
                                     $data_ultimo_sv = $reg['data_ultimo_sv'];
                                     $fk_impedimento = $reg['fk_impedimento'];
                                     $data_ultimo_sv_red = $reg['data_ultimo_sv_red'];
+                                    $nome_secao = $reg['secao'];
                                     $Previsto_Para_Id[$h] = $id_m;
                                     $Previsto_Nome_Graduacao[$h] = $nome_graduacao;
+                                    $Previsto_Para_Nome_secao[$h] = $nome_secao;
                                     $Previsto_Para_Antiguidade[$h] = $antiguidade;
                                     $Previsto_Para_Nome[$h] = $nome_de_guerra;
                                     $Previsto_Para_Servico[$h] = $servico;
@@ -489,6 +491,7 @@ $dia_semanaPt = utf8_encode(strftime('%a', strtotime($dataprevista)));
                                     $Previsto_Para_Id[$h] = '377';
                                     $Previsto_Nome_Graduacao[$h] = 'NENHUM MILITAR ';
                                     $Previsto_Para_Nome[$h] = 'DISPONIVEL';
+                                    $Previsto_Para_Nome_secao[$h] = 'NAÕ TEM';
                                     $Previsto_Para_Graduacao[$h] = '1';
                                     $h++;
                                 }

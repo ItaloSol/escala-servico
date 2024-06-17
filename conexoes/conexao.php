@@ -41,8 +41,9 @@ $Data_Atual_Atualizada = date('Y-m-d');
         $conexao = null;
     }
     
-       
-  $id_usuario =  $_SESSION["usuario"][2];
+    if(isset($_SESSION["usuario"][2])) {
+      $id_usuario =  $_SESSION["usuario"][2];
+    }  
     
     //        $query_data_ultimo_sv = $conexao->prepare("SELECT * FROM usuarios WHERE id_senha = '$id_usuario'");//SELECIONA A TABELA DE MILITARES
 
