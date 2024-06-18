@@ -91,7 +91,7 @@ if (isset($_POST['escala'])) {
 
             $valor_pagina = paginacao($Data_Selecionada) * $qtd_mil;;
 
-            $Pagina_Atual_Array[$i] = "ORDER BY m.$Postos_Folga[$i] ASC , m.antiguidade " . $antiguidade_posto . " LIMIT $valor_pagina  , $Postos_Qtd[$i]";
+            $Pagina_Atual_Array[$i] = "ORDER BY m.$Postos_Folga[$i] ASC , m.data_nasc " . $antiguidade_posto . " LIMIT $valor_pagina  , $Postos_Qtd[$i]";
             if ($atividade_posto == '2') {
                 $query_buscar_militar_anterior = $conexao->prepare("SELECT * FROM escala WHERE fk_posto = '$id_posto' ORDER BY data DESC");
                 $query_buscar_militar_anterior->execute(); //EXECUTA TABELA
@@ -102,7 +102,7 @@ if (isset($_POST['escala'])) {
 
                 if ($data_atividade == $Dia_Semana) {
                     $desativar_repetircao[$i] = true;
-                    $Pagina_Atual_Array[$i] = "ORDER BY m.$Postos_Folga[$i] ASC , m.antiguidade " . $antiguidade_posto . " LIMIT $Pagina_Atual , $Postos_Qtd[$i]";
+                    $Pagina_Atual_Array[$i] = "ORDER BY m.$Postos_Folga[$i] ASC , m.data_nasc " . $antiguidade_posto . " LIMIT $Pagina_Atual , $Postos_Qtd[$i]";
                 } else {
                     $desativar_repetircao[$i] = false;
                     $Pagina_Atual_Array[$i] = "  m.id = '" . $id_militar_sv_anterior . "'";

@@ -358,7 +358,7 @@ $dia_semanaPt = utf8_encode(strftime('%a', strtotime($dataprevista)));
                                 //  in_array($dia_semanaPt , $Postos_Dias[$i])    -> Como verificar a data
                                 $valor_pagina = paginacao($dataprevista) * $qtd_mil;
                                 $cada_posto[$i] = $valor_pagina;
-                                $Pagina_Atual_Array[$i] = "ORDER BY m.$Postos_Folga[$i] ASC , m.antiguidade " . $antiguidade_posto . " LIMIT $valor_pagina  , $Postos_Qtd[$i]";
+                                $Pagina_Atual_Array[$i] = "ORDER BY m.$Postos_Folga[$i] ASC , m.data_nasc " . $antiguidade_posto . " LIMIT $valor_pagina  , $Postos_Qtd[$i]";
                                 if ($atividade_posto == '2') {
                                     $query_buscar_militar_anterior = $conexao->prepare("SELECT * FROM escala WHERE fk_posto = '$id_posto' AND tipo = '$posto_servico' ORDER BY data DESC");
                                     $query_buscar_militar_anterior->execute(); //EXECUTA TABELA
@@ -368,7 +368,7 @@ $dia_semanaPt = utf8_encode(strftime('%a', strtotime($dataprevista)));
                                     }
                                     if ($data_atividade == $dia_semanaPt) {
                                         $desativar_repetircao = true;
-                                        $Pagina_Atual_Array[$i] = "ORDER BY m.$Postos_Folga[$i] ASC , m.antiguidade " . $antiguidade_posto . " LIMIT $Pagina_Atual , $Postos_Qtd[$i]";
+                                        $Pagina_Atual_Array[$i] = "ORDER BY m.$Postos_Folga[$i] ASC , m.data_nasc " . $antiguidade_posto . " LIMIT $Pagina_Atual , $Postos_Qtd[$i]";
                                     } else {
                                         $desativar_repetircao = false;
                                         $Pagina_Atual_Array[$i] = " m.id = " . $id_militar_sv_anterior . "";
