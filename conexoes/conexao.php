@@ -45,20 +45,15 @@ $Data_Atual_Atualizada = date('Y-m-d');
       $id_usuario =  $_SESSION["usuario"][2];
     }  
     
-    //        $query_data_ultimo_sv = $conexao->prepare("SELECT * FROM usuarios WHERE id_senha = '$id_usuario'");//SELECIONA A TABELA DE MILITARES
+    //        $query_data_ultimo_sv = $conexao->prepare("SELECT * FROM militares order by data_nasc ASC");//SELECIONA A TABELA DE MILITARES
 
     // $query_data_ultimo_sv->execute();
-       
+    //    $i = 1;
     //       while($ultimosv = $query_data_ultimo_sv->fetch(PDO::FETCH_ASSOC)  ){
-    //         $cpf = $ultimosv['cpf'];
-    //         $validacpf = $ultimosv['valida'];
-    //         $id = $ultimosv['id_senha'];
-    //    //     echo $id;
-    //       }
-    //       if(!isset($validacpf)){
-            
-    //           header("Location: ../acoes/cpf.php?id='$id'");
-            
-         
+    //         $id = $ultimosv['id'];
+    //         $ipdata = $conexao->prepare("UPDATE militares SET antiguidade = '$i' WHERE id = $id");//SELECIONA A TABELA DE MILITARES
+    //         $ipdata->execute();
+    //         $i++;
+           
     //       }
 ?>
