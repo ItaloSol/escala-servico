@@ -26,7 +26,7 @@
     }
 
 
-	//Criar a conexão
+	//Criar a conexão Teste ignore
 	$conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
     $conn->set_charset("utf8");
 ?>
