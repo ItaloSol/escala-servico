@@ -261,9 +261,10 @@
                                 <input type="hidden" name="id_usuario1"  id="id_usuario1"/>
                      <br>
                      <label for="nome">Serviço Tirado pelo militar:  </label>
-                        <input type="text" style="text-transform:uppercase" name="usuario2"  id="usuario2" placeholder="Pesquisar Militar" onkeyup="listar_usuarios(this.value)" />
-                              <span id="resultado_pesquisa2"></span> 
-                                <input type="hidden" name="id_usuario2"  id="id_usuario2"/>
+                     <input type="text" style="text-transform:uppercase"  name="usuario2" id="usuario2" placeholder="Pesquisar usuário" onkeyup="listar_usuariosTodos(this.value, this.id)">   
+                     <span id="resultado_pesquisa_usuario2"></span>
+                     <input type="hidden" name="id_usuario2"  id="id_usuario2">
+                                
                                 <br></br> 
 			<input class="btn btn-dblue btn-lg btn-primary" type="submit" name="submit">
            
