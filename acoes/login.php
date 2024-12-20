@@ -4,9 +4,10 @@
     include_once('../conexoes/conect.php');
     date_default_timezone_set('America/Sao_Paulo');
     if(isset($_POST["email"]) && isset($_POST["senha"]) && $conexao != null){
+        $Senha_md5 = md5($_POST["senha"]);
         $query = $conexao->prepare("SELECT * FROM usuarios WHERE email = ? AND senha = ?");
-        $query->execute(array($_POST["email"], $_POST["senha"]));
-      
+        $query->execute(array($_POST["email"], $Senha_md5));
+        
         if($query->rowCount()){
             $user = $query->fetchAll(PDO::FETCH_ASSOC)[0];
             $id_desse_user = $user["fk_militar"];
