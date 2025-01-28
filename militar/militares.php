@@ -310,6 +310,8 @@ include_once('../dados/contagem.php');
                                 $graduacoes = $conexao->prepare("SELECT * FROM graduacoes ORDER BY id_graduacao ASC "); //SELECIONA A TABELA DE MILITARES
                                 $graduacoes->execute();
                                 $qtd_grad = 0;
+                                $id_graduacao = array();
+                                $nome_graduacao = array();
                                 while ($gradussacao = $graduacoes->fetch(PDO::FETCH_ASSOC)) {
                                     $id_graduacao[$qtd_grad] = $gradussacao['id_graduacao'];
                                     $nome_graduacao[$qtd_grad] = $gradussacao['nome_graduacao'];
