@@ -45,6 +45,7 @@ if(isset($_POST['submit'])){
   $tipo_sv = $_POST['tipo_sv'];
   $status_posto = $_POST['status_posto'];
   $antiguidade_posto = $_POST['antiguidade_posto'];
+  $escala_um_secao =$_POST['um_militar'];
   if($servico == 'VERMELHA'){
     $tipo_sv = $tipo_sv . '_red';
    }
@@ -65,7 +66,7 @@ $datahoraa = (string) $datahora;    //  string $datahora;
   $sqlAtividade = "INSERT INTO atividade (observacao, data_hora, fk_alteracao, fk_usuario) VALUES ( '$observacao', '$datahoraa', '16', '$id_desse_user')";
   $result = $conect->query($sqlAtividade);
   if($existe_nome == false){
-  $result_usuario = "UPDATE posto SET nome_posto='$nome',qtd_mil='$qtd_mil', posto_antiguidade = '$antiguidade_posto' , posto_graduacao='$graduacao',posto_servico='$servico',data_posto='$dia',tipo_folga='$tipo_sv',curso='$curso',prioridade='$Prioridade',status_posto='$status_posto', guarnicao_posto = '$repitir', data_atividade = '$dia_troca'  
+  $result_usuario = "UPDATE posto SET nome_posto='$nome',qtd_mil='$qtd_mil', posto_antiguidade = '$antiguidade_posto' , posto_graduacao='$graduacao',posto_servico='$servico',data_posto='$dia',tipo_folga='$tipo_sv',curso='$curso',prioridade='$Prioridade',status_posto='$status_posto', guarnicao_posto = '$repitir', data_atividade = '$dia_troca',   escala_um_secao = '$escala_um_secao'
   WHERE id_posto = '$id' ";
 	$resultado_usuario = mysqli_query($conn, $result_usuario);
  

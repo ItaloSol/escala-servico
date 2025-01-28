@@ -223,7 +223,7 @@
                 $dia_troca = $user_data['data_atividade'];
                 $atividade_posto = $user_data['guarnicao_posto'];
                 $posto_antiguidade = $user_data['posto_antiguidade'];
-                
+                $escala_um_secao = $user_data['escala_um_secao'];
               }
              
             }else{
@@ -392,7 +392,13 @@
          <div style="font-size: 20px;" >Prioridade de Antiguidade: <input type="radio" value='DESC' name='antiguidade_posto' <?php /* SISTEMA DE ESCALA DE SERVIÇO CRIADO POR SD ÍTALO SOL SCLOCOO *DANTAS*  */ echo  ($posto_antiguidade == 'DESC') ? 'checked' : ''?>> Moderno <input type="radio" value='ASC' name='antiguidade_posto' <?php /* SISTEMA DE ESCALA DE SERVIÇO CRIADO POR SD ÍTALO SOL SCLOCOO *DANTAS*  */ echo  ($posto_antiguidade == 'ASC') ? 'checked' : ''?>> Antigo</div>	<br>
          <label style="font-size: 20px;">Prioridade: </label>
 			<input  type="number" name="Prioridade" value="<?= $prioridade ?>" placeholder="Digite a Prioridade"><br><br>
+            <div style="font-size: 20px;" >Desativar ou Ativar Função de escalar só um militar da seção? (Isso pode beneficiar militares e desbalancear a folga)</div>
+                                <input type="radio" id="um_militar" name="um_militar" value="GROUP BY m.secao HAVING COUNT(*) > 0" <?php /* SISTEMA DE ESCALA DE SERVIÇO CRIADO POR SD ÍTALO SOL SCLOCOO *DANTAS*  */ echo ($escala_um_secao == 'GROUP BY m.secao HAVING COUNT(*) > 0') ? 'checked' : ''?> required>
+		 <label for="1">Ativado</label>
+         <input type="radio" id="um_militar" name="um_militar" value="" <?php /* SISTEMA DE ESCALA DE SERVIÇO CRIADO POR SD ÍTALO SOL SCLOCOO *DANTAS*  */ echo ($escala_um_secao == '') ? 'checked' : ''?> required>
+         <label for="0">Desativado</label><br><br>
 			<input class="btn btn-dblue btn-lg btn-primary" type="submit" name="submit">
+            
 		</form> 
 			
             </div>

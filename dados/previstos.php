@@ -63,6 +63,7 @@ if (isset($_POST['escala'])) {
             $id_posto = $posto['id_posto'];
             $nome_posto = $posto['nome_posto'];
             $qtd_mil = $posto['qtd_mil'];
+            $escala_um_secao =$posto['escala_um_secao'];
             $posto_graduacao = $posto['posto_graduacao'];
             $posto_servico = $posto['posto_servico'];
             $status_posto = $posto['status_posto'];
@@ -77,6 +78,7 @@ if (isset($_POST['escala'])) {
             $Postos_Id[$i] = $id_posto;
             $Postos_Nome[$i] = $nome_posto;
             $Postos_Qtd[$i] = $qtd_mil;
+            $Postos_Um_Secao[$i] = $escala_um_secao;
             $Postos_Graduacao[$i] = $posto_graduacao;
             $Postos_Servico[$i] = $posto_servico;
             $Postos_Status[$i] = $status_posto;
@@ -91,7 +93,7 @@ if (isset($_POST['escala'])) {
 
             $valor_pagina = paginacao($Data_Selecionada) * $qtd_mil;;
 
-            $Pagina_Atual_Array[$i] = "ORDER BY m.$Postos_Folga[$i] ASC , m.data_nasc " . $antiguidade_posto . " LIMIT $valor_pagina  , $Postos_Qtd[$i]";
+            $Pagina_Atual_Array[$i] = "$Postos_Um_Secao[$i] ORDER BY m.$Postos_Folga[$i] ASC , m.data_nasc " . $antiguidade_posto . " LIMIT $valor_pagina  , $Postos_Qtd[$i]";
             if ($atividade_posto == '2') {
                 $query_buscar_militar_anterior = $conexao->prepare("SELECT * FROM escala WHERE fk_posto = '$id_posto' ORDER BY data DESC");
                 $query_buscar_militar_anterior->execute(); //EXECUTA TABELA
@@ -203,7 +205,7 @@ if (isset($_POST['escala'])) {
           WHERE m.data_ultimo_sv < '$Folga_Obrigatoria'  AND m.data_ultimo_sv_red < '$Folga_Obrigatoria' AND m.missao_red < '$Folga_Missao' AND m.externo < '$Folga_Externa' AND m.externo_red < '$Folga_Externa' 
           AND m.id NOT IN $Impedido_Lista AND m.servico != 'LICENCIADO' AND m.escalado_externo < '$Folga_Escalado_Externo' AND id NOT IN $Impedido_Troca_Lista AND m.escalado_externo_red < '$Folga_Escalado_Externo' 
           AND id NOT IN  $Previstos_Escalados AND id NOT IN $Impedido_Dia AND m.missao < '$Folga_Missao' AND id NOT IN $Impedido_Externa AND m.missao < '$Folga_Missao' AND m.servico != '$Diferente_De[$busca]'  
-          $Busca_Curso_Graduacao[$busca] GROUP BY m.secao HAVING COUNT(*) > 0 $Pagina_Atual_Array[$busca]");
+          $Busca_Curso_Graduacao[$busca]  $Pagina_Atual_Array[$busca]");
 
                 if (isset($id_militar_sv_anterior_[$busca]) && $desativar_repetircao[$busca] == false) {
                     $query_registro = $conexao->prepare("SELECT * FROM militares m INNER JOIN graduacoes g ON m.graduacao = g.id_graduacao
